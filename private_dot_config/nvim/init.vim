@@ -23,7 +23,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'gruvbox-community/gruvbox'
-Plug 'alvan/vim-closetag'
+Plug 'tmsvg/pear-tree'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 call plug#end()
@@ -46,7 +46,9 @@ augroup ENDPlug
 
 :lua << END
     require'lspconfig'.tsserver.setup{}
+    require'lspconfig'.rls.setup{}
 END
 
 let g:completion_matchin_strategy_list = ['exact', 'substring', 'fuzzy']
 lua require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.rls.setup{on_attach=require'completion'.on_attach}
