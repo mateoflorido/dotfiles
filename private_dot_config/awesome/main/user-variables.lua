@@ -16,8 +16,8 @@ local _M = {
   modkey = "Mod4",
 
   -- user defined wallpaper
-  wallpaper = nil,
-  --wallpaper = home .. "/Pictures/your-wallpaper-here.jpg",
+  -- wallpaper = nil,
+  wallpaper = home .. "/Pictures/Wallpapers/mandalorian.png",
   editor = "nvim",
 }
 

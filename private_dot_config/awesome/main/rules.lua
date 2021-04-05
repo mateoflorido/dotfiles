@@ -70,15 +70,26 @@ function _M.get(clientkeys, clientbuttons)
         titlebars_enabled = true
     },
     -- Solve Jetbrains behavior
-    { rule = {
-	    class = "jetbrains-*",
-	    name = "^win[0-9]+$"
-    },
-    properties = {
-	    placement = awful.placement.no_offscreen,
-	    titlebars_enabled = false
-    }
-    },
+    {
+            rule = {
+                class = "jetbrains-.*",
+            }, properties = { focus = true, buttons = clientbuttons_jetbrains }
+        },
+        {
+            rule = {
+                class = "jetbrains-.*",
+                name = "win.*"
+            }, properties = { titlebars_enabled = false, focusable = false, focus = true, floating = true, placement = awful.placement.restore }
+        },
+    -- { rule = {
+	--    class = "jetbrains-*",
+	--    name = "^win[0-9]+$"
+    --},
+    --properties = {
+	--    placement = awful.placement.no_offscreen,
+	--    titlebars_enabled = false
+    --}
+    --},
 },
 
 -- Set Firefox to always map on the tag named "2" on screen 1.
