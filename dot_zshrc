@@ -15,12 +15,13 @@ alias gbr='git branch'
 alias pins='pacman -S'
 alias ls='ls --color=auto'
 alias v='nvim '
+alias k='kubectl'
 
 # =============
 #    EXPORT
 # =============
 
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # =============
 #    HISTORY
@@ -315,3 +316,5 @@ function parse_git_dirty() {
     echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
   fi
 }
+
+source <(kubectl completion zsh)
