@@ -13,7 +13,7 @@ alias crgb='cargo build'
 alias crgr='cargo run'
 alias gbr='git branch'
 alias pins='pacman -S'
-alias ls='lsd'
+# alias ls='lsd'
 alias v='nvim'
 alias k='kubectl'
 alias ssh='kitty +kitten ssh'
@@ -325,3 +325,7 @@ path+=('/home/mateo/.local/bin')
 path+=('/home/mateo/go/bin')
 path+=('/usr/local/go/bin')
 export PATH
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
